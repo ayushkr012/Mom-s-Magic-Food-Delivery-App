@@ -69,12 +69,16 @@ UserSchema.pre("save", async function (next) {
 
 UserSchema.methods = {
   jwtToken() {
-    // return jwt.sign({_id:this._id},process.env.JWT_SECRET,{expiresIn:process.env.JWT_EXPIRE,});
-    return JWT.sign(
-      { _id: this._id, email: this.email },
-      process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRE }
-    );
+    try {
+      return JWT.sign(
+        { _id: this._id, email: this.email },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_EXPIRE }
+      );
+    } catch (error) {
+      // Handle the error, e.g., log it or throw a custom error
+      throw new Error(`Error signing JWT: ${error.message}`);
+    }
   },
 };
 
