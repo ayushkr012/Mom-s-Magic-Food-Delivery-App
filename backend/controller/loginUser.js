@@ -35,13 +35,13 @@ exports.loginUser = async (req, res) => {
     const authToken = user.jwtToken();
     user.password = undefined;
 
-    const cookieOption = {
-      maxAge: 24 * 60 * 60 * 1000, // hours (24 hours * 60 minutes/hour * 60 seconds/minute * 1000 milliseconds/second).
-      // httpOnly: true, // cookie ko frontend se access nhi kr skte hai
-      secure: true, // Set to true if your app is served over HTTPS
-    };
+    // const cookieOption = {
+    //   maxAge: 24 * 60 * 60 * 1000, // hours (24 hours * 60 minutes/hour * 60 seconds/minute * 1000 milliseconds/second).
+    //   // httpOnly: true, // cookie ko frontend se access nhi kr skte hai
+    //   secure: true, // Set to true if your app is served over HTTPS
+    // };
 
-    res.cookie("token", authToken, cookieOption);
+    // res.cookie("token", authToken, cookieOption);
 
     return res.status(200).json({
       success: true,
