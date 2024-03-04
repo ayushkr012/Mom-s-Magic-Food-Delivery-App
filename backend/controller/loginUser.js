@@ -32,7 +32,8 @@ exports.loginUser = async (req, res) => {
       });
     }
 
-    const authToken = user.jwtToken();
+    // const authToken = user.jwtToken();
+    const authToken = "asfasfasfsafsf";
     user.password = undefined;
 
     // const cookieOption = {
