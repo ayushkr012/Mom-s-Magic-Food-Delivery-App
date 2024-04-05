@@ -206,13 +206,21 @@ export default function Home() {
                       );
                     })
                 ) : (
-                  <div>loading...</div>
+                  <div className="text-center mt-5 text-black">
+                    <p>Loading...</p>
+                    <p>
+                      Please wait while we fetch the data, It take Some Time .
+                    </p>
+                  </div>
                 )}
               </div>
             );
           })
         ) : (
-          <div>loading...</div>
+          <div className="text-center mt-5 text-black">
+            <p>Loading...</p>
+            <p>Please wait while we fetch the data, It take Some Time .</p>
+          </div>
         )}
       </div>
       <div>

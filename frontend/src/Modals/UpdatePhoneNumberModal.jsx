@@ -37,7 +37,7 @@ const UpdatePhoneNumberModal = ({
           fetchUserDetails();
           // Close the modal after updating phone number
           handleClose();
-        }, 2000);
+        }, 1500);
       } else {
         // Set error message if any error occurs while updating Address
         toast.error(json.message);

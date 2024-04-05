@@ -34,7 +34,7 @@ const DeleteAccountModal = ({ showModal, handleClose }) => {
       // after 1.5 second it will redirect to home page
       setTimeout(() => {
         navigate("/");
-      }, 1500);
+      },1500);
     } else {
       // Set error message
       toast.error(json.message);

@@ -51,9 +51,66 @@ exports.userOtpSend = async (req, res) => {
           from: process.env.EMAIL,
           to: email,
           subject: "Mom's Magic User Verification",
-          text: `Hii ${preuser.name} Your OTP for Account Verification is ${OTP}. This OTP is valid for 10 minutes only. -Team Mom's Magic`,
+          html: `
+    <html>
+      <head>
+        <style>
+          .container {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          .footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+          }
+          .footer p {
+            margin: 5px 0;
+          }
+          .footer a {
+            color: #004aad;
+            text-decoration: none;
+            margin-right: 15px;
+          }
+          .footer a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h2 style="color: #004aad;">Mom's Magic User Verification</h2>
+          <p>Hello ${preuser.name} ,</p>
+          <p>Your OTP for Account Verification is:</p>
+          <div style="background-color: #f4f4f4; border-radius: 5px; padding: 10px; margin-bottom: 20px;">
+            <h1 style="font-size: 36px; color: #004aad; margin: 0;">${OTP}</h1>
+          </div>
+          <p>This OTP is valid for 10 minutes only.</p>
+        </div>
+        <div class="footer">
+          <p>
+            <a href="#">About</a> | 
+            <a href="#">Accessibility</a> | 
+            <a href="#">Help Center</a>
+          </p>
+          <p>
+            <a href="#">Privacy & Terms</a> | 
+            <a href="#">Ad Choices</a> | 
+            <a href="#">Advertising</a>
+          </p>
+          <p>
+            <a href="#">Business Services</a> | 
+            <a href="#">Get the Mom's Magic app</a>
+          </p>
+          <p>Mom's Magic Corporation © 2024</p>
+        </div>
+      </body>
+    </html>
+  `,
         };
-
         tarnsporter.sendMail(mailOptions, (error, info) => {
           if (error) {
             console.log("error", error);
@@ -81,9 +138,65 @@ exports.userOtpSend = async (req, res) => {
           from: process.env.EMAIL,
           to: email,
           subject: "Mom's Magic User Verification",
-          text: `  
-          Hii ${preuser.name} Your OTP for Account Verification is ${OTP}. This 
-          OTP is valid for 10 minutes only. -Team Mom's Magic`,
+          html: `
+    <html>
+      <head>
+        <style>
+          .container {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          .footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+          }
+          .footer p {
+            margin: 5px 0;
+          }
+          .footer a {
+            color: #004aad;
+            text-decoration: none;
+            margin-right: 15px;
+          }
+          .footer a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h2 style="color: #004aad;">Mom's Magic User Verification</h2>
+          <p>Hello ${preuser.name} ,</p>
+          <p>Your OTP for Account Verification is:</p>
+          <div style="background-color: #f4f4f4; border-radius: 5px; padding: 10px; margin-bottom: 20px;">
+            <h1 style="font-size: 36px; color: #004aad; margin: 0;">${OTP}</h1>
+          </div>
+          <p>This OTP is valid for 10 minutes only.</p>
+        </div>
+        <div class="footer">
+          <p>
+            <a href="#">About</a> | 
+            <a href="#">Accessibility</a> | 
+            <a href="#">Help Center</a>
+          </p>
+          <p>
+            <a href="#">Privacy & Terms</a> | 
+            <a href="#">Ad Choices</a> | 
+            <a href="#">Advertising</a>
+          </p>
+          <p>
+            <a href="#">Business Services</a> | 
+            <a href="#">Get the Mom's Magic app</a>
+          </p>
+          <p>Mom's Magic Corporation © 2024</p>
+        </div>
+      </body>
+    </html>
+  `,
         };
 
         tarnsporter.sendMail(mailOptions, (error, info) => {
