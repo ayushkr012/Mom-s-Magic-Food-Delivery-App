@@ -120,6 +120,7 @@ export default function Signup() {
                 <Form.Control
                   type="text"
                   name="name"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Name"
                   value={credentials.name}
@@ -130,6 +131,7 @@ export default function Signup() {
                 <Form.Control
                   type="email"
                   name="email"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Email"
                   value={credentials.email}
@@ -140,6 +142,7 @@ export default function Signup() {
                 <Form.Control
                   type="password"
                   name="password"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Password"
                   value={credentials.password}
@@ -150,6 +153,7 @@ export default function Signup() {
                 <Form.Control
                   type="password"
                   name="confirmPassword"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Confirm Password"
                   value={credentials.confirmPassword}
@@ -161,6 +165,7 @@ export default function Signup() {
                 <Form.Control
                   type="text"
                   name="location"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Click Below to get Current Location"
                   value={credentials.location}
@@ -194,6 +199,7 @@ export default function Signup() {
                       />
                     </div>
                   )}
+
                   <input
                     type="file"
                     name="myImage"
@@ -208,7 +214,7 @@ export default function Signup() {
                 <Button
                   className="w-100"
                   type="submit"
-                  style={{ backgroundColor: "#152F55" }}
+                  // style={{ backgroundColor: "#152F55" }}
                 >
                   Register
                 </Button>
@@ -258,7 +264,7 @@ export default function Signup() {
       `}
       </style>
 
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 }

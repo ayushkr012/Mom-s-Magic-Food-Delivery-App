@@ -83,6 +83,7 @@ export default function Login() {
                 <Form.Control
                   type="email"
                   name="email"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Email"
                   value={credentials.email}
@@ -94,6 +95,7 @@ export default function Login() {
                 <Form.Control
                   type="password"
                   name="password"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Password"
                   value={credentials.password}
@@ -110,7 +112,7 @@ export default function Login() {
               <div className="mt-1">
                 <Button
                   className="w-100 "
-                  style={{ backgroundColor: "#152F55" }}
+                  // style={{ backgroundColor: "#152F55" }}
                   type="submit"
                 >
                   Log In

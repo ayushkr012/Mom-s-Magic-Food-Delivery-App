@@ -114,7 +114,7 @@ export default function Feedback() {
               <div className="mt-4">
                 <Button
                   className="w-100"
-                  style={{ backgroundColor: "#152F55" }}
+                  // style={{ backgroundColor: "#152F55" }}
                   type="submit"
                 >
                   Submit

@@ -85,7 +85,7 @@ const DeleteAccountModal = ({ showModal, handleClose }) => {
           <Button
             type="submit"
             className="w-100 btn btn-danger mt-3"
-            style={{ backgroundColor: "#ED1B19" }}
+            // style={{ backgroundColor: "#ED1B19" }}
           >
             Delete
           </Button>

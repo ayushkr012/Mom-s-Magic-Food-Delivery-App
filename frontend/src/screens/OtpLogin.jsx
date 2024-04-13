@@ -92,6 +92,7 @@ export default function OtpLogin() {
                 <Form.Control
                   type="text"
                   name="otp"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder=" Please Enter Your OTP Here"
                   value={credentials.otp}

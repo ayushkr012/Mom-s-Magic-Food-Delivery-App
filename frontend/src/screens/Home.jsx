@@ -62,12 +62,12 @@ export default function Home() {
                   />
                   <button
                     className="btn  text-white searchButton "
-                    style={{
-                      padding: "8px 16px",
-                      border: "none",
-                      borderRadius: "5px",
-                      backgroundColor: "#FB641B",
-                    }}
+                    // style={{
+                    //   padding: "8px 16px",
+                    //   border: "none",
+                    //   borderRadius: "5px",
+                    //   // backgroundColor: "#FB641B",
+                    // }}
                     onClick={() => {
                       setSearch("");
                     }}
@@ -239,7 +239,7 @@ export default function Home() {
           background-color:#FB641B;
          }
          .searchButton:hover{
-          background-color:#FB641B;
+          background-color:#CC514F;
          }
         `}
       </style>

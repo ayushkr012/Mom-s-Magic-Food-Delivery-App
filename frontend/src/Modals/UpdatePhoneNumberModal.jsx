@@ -91,7 +91,7 @@ const UpdatePhoneNumberModal = ({
             variant="primary"
             type="submit"
             className="w-100 mt-3"
-            style={{ backgroundColor: "#152F55" }}
+            // style={{ backgroundColor: "#152F55" }}
           >
             Update
           </Button>

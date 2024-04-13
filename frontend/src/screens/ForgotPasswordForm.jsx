@@ -79,6 +79,7 @@ export default function ForgotPasswordForm() {
                 <Form.Control
                   type="email"
                   name="email"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Email"
                   value={credentials.email}
@@ -90,6 +91,7 @@ export default function ForgotPasswordForm() {
                 <Form.Control
                   type="password"
                   name="password"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Enter New Password"
                   value={credentials.password}
@@ -101,7 +103,7 @@ export default function ForgotPasswordForm() {
                 <Button
                   className="w-100 "
                   type="submit"
-                  style={{ backgroundColor: "#152F55" }}
+                  // style={{ backgroundColor: "#152F55" }}
                 >
                   Submit
                 </Button>

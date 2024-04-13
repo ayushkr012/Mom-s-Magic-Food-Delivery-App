@@ -87,7 +87,7 @@ const UpdateAddressModal = ({ showModal, handleClose, fetchUserDetails }) => {
             variant="primary"
             type="submit"
             className="w-100 mt-3"
-            style={{ backgroundColor: "#152F55" }}
+            // style={{ backgroundColor: "#152F55" }}
           >
             UPDATE
           </Button>

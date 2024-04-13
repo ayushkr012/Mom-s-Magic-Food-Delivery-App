@@ -83,6 +83,7 @@ export default function SendOtp() {
                 <Form.Control
                   type="email"
                   name="email"
+                  required
                   style={{ ...sharedInputStyles }}
                   placeholder="Enter Your Email Address"
                   value={credentials.email}

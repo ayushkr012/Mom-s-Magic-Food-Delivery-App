@@ -43,8 +43,8 @@ export default function Cards() {
 
   // Step 2: Apply coupon function
   const applyCoupon = () => {
-    const validCouponCode = "MomsMagic"; // Replace with your valid coupon code
-    if (couponCode === validCouponCode) {
+    const validCouponCode = ""; // Replace with your valid coupon code
+    if (couponCode.length > validCouponCode) {
       // Generate a random discount percentage between 20% and 70%
       const randomDiscount = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
       setDiscountPercentage(randomDiscount);
@@ -444,6 +444,7 @@ export default function Cards() {
                         <>
                           <MDBInput
                             label="Enter Coupon Code"
+                            placeholder="MomsMagic"
                             value={couponCode}
                             style={{ backgroundColor: "white", color: "black" }}
                             onChange={(e) => setCouponCode(e.target.value)}
