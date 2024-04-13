@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 // import Carousel from "../components/Carousel";
+import { toast, ToastContainer } from "react-toastify";
 import Card from "../components/Card";
 import { Backendurl } from "../services/helper";
 export default function Home() {
@@ -226,6 +227,8 @@ export default function Home() {
       <div>
         <Footer></Footer>
       </div>
+
+      <ToastContainer />
 
       {/*  Add css Property to the current  File  */}
 

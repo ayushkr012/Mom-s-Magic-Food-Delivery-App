@@ -42,7 +42,7 @@ export default function OtpLogin() {
       // after 2 second it will redirect to home page
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 1000);
     } else {
       toast.error(json.message);
       // when login failed then remove the email from localstorage

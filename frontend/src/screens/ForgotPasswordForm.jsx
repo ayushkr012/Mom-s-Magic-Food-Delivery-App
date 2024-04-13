@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { Container,  Card, Form, Button } from "react-bootstrap";
+import { Container, Card, Form, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { Backendurl } from "../services/helper";
 
@@ -34,7 +34,7 @@ export default function ForgotPasswordForm() {
       // after 2 second it will redirect to login page
       setTimeout(() => {
         navigate("/login");
-      }, 2000);
+      }, 1500);
     } else {
       // Set error message
       toast.error(json.message);

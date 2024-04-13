@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatchCart, useCart } from "./ContextReducer";
+import { toast } from "react-toastify";
 // import Modal from "../Modal";
 // import Cart from "../screens/Cart";
 // import { ToastContainer, toast } from "react-toastify";
@@ -13,7 +14,7 @@ export default function Card(props) {
   let navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState("");
-  
+
   const priceRef = useRef();
   let options = props.options;
   let foodItem = props.item;
@@ -33,6 +34,8 @@ export default function Card(props) {
     if (!localStorage.getItem("authToken")) {
       navigate("/login");
     }
+    toast.success("Item added to cart");
+
     let food = [];
     for (const item of data) {
       if (item.id === foodItem._id) {
@@ -184,14 +187,15 @@ export default function Card(props) {
         </div>
         <hr style={{ margin: "10px 0" }} />
         <button
-          className="btn justify-center ms-2 text-white addCartButton fs-6"
-          style={{
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "5px",
-            backgroundColor: "#FB641B",
-            // cursor: "pointer",
-          }}
+          className="btn btn-success justify-center ms-2 text-white addCartButton fs-6"
+          // style={{
+          //   padding: "8px 16px",
+          //   border: "none",
+          //   borderRadius: "5px",
+          //   backgroundColor: "#FB641B", // Updated button color
+          //   cursor: "pointer",
+          //   transition: "background-color 0.3s ease-in-out", // Smooth transition on hover
+          // }}
           onClick={handleAddToCart}
         >
           Add to Cart
@@ -210,12 +214,11 @@ export default function Card(props) {
          }
 
          .addCartButton:hover{
-          background-color:#FB641B;
+          background-color:"green;
          }
          
         `}
       </style>
-      {/* <ToastContainer /> */}
     </div>
   );
 }

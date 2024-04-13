@@ -32,7 +32,7 @@ export default function SendOtp() {
       // after 2 second it will redirect to home page
       setTimeout(() => {
         navigate("/otplogin");
-      }, 2000);
+      }, 1000);
     } else {
       toast.error(json.message);
     }

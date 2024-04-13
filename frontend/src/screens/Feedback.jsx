@@ -39,7 +39,7 @@ export default function Feedback() {
       // after 2 second it will redirect to login page
       setTimeout(() => {
         navigate("/");
-      }, 2500);
+      }, 1500);
     } else {
       // Set error message
       toast.error(json.message);

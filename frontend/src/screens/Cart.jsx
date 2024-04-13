@@ -156,7 +156,7 @@ export default function Cards() {
         setTimeout(() => {
           dispatch({ type: "DROP" });
           navigate("/myOrder");
-        }, 2000);
+        }, 1500);
       } else {
         toast.error("Internal Server Error");
       }

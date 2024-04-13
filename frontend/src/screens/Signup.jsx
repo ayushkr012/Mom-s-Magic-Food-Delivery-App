@@ -81,7 +81,7 @@ export default function Signup() {
         toast.success(json.message);
         setTimeout(() => {
           navigate("/login");
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       console.error("Error during signup:", error);
