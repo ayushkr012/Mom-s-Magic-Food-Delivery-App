@@ -90,20 +90,16 @@ export default function UserProfile() {
 
   return (
     <div
-    // style={
-    //   {
-    //     backgroundImage: `url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=700&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZHx8fHx8fDE3MDU2MDQwMzU&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=900")`,
-    //     filter: "brightness(100%)",
-    //     height: "100vh",
-    //   }
-    // }
+      style={{
+        backgroundImage: `url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=700&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZHx8fHx8fDE3MDU2MDQwMzU&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=900")`,
+        filter: "brightness(100%)",
+        height: "100vh",
+      }}
     >
       <Navbar />
-      {/* <Container> */}
-      <div className="text-center fs-1 mt-4 mb-0 " style={{ ...cardDataStyle }}>
+      {/* <div className="text-center fs-1 mt-4 mb-0 " style={{ ...cardDataStyle }}>
         Profile
-      </div>
-
+      </div> */}
 
       <Card className="mb-3 my-5" style={{ borderRadius: ".5rem" }}>
         <Row className="g-0">
@@ -223,8 +219,6 @@ export default function UserProfile() {
         </Row>
       </Card>
 
-
-      
       {/* </Container> */}
 
       <UpdatePhoneNumberModal

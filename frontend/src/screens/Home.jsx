@@ -1,42 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import food_items from "./data/food_items.json";
+import foodCategory from "./data/food_categories.json";
+
 // import Carousel from "../components/Carousel";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Card from "../components/Card";
-import { Backendurl } from "../services/helper";
 export default function Home() {
-  // we can't use .map function on objects, isili hm backend se data as a form of array hi la rhe h
-  const [foodCategory, setFoodCategory] = useState([]);
-  const [food_items, setFood_items] = useState([]);
   const [search, setSearch] = useState("");
-
-  // load data from backend and set it to food_items and foodCategory
-  const loadData = async () => {
-    let responce = await fetch(`${Backendurl}/api/auth/foodData`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    responce = await responce.json();
-    setFood_items(responce[0]);
-    setFoodCategory(responce[1]);
-    //console.log(responce[0], responce[1]); // responce[0] is food_items and responce[1] is foodCategory
-  };
-
-  useEffect(() => {
-    loadData();
-  }, []);
 
   return (
     <div>
       <div>
         <Navbar></Navbar>
       </div>
-
-      {/* here we can paste the crousel because we have to add the search functionality and it use only once in home page  */}
-      {/* <Carousel></Carousel> */}
+      {/* Carousel */}
       <div>
         <div>
           <div
@@ -161,18 +140,13 @@ export default function Home() {
         foodCategory.length > 0 ? (
           foodCategory.map((data) => {
             return (
-              <div className="row">
-                {/* here we change data._id to data.id and below change filteredItem._id to filteredItem.id */}
-
+              <div key={data.id} className="row">
+                {" "}
+                {/* Assigning key to outer div */}
                 {/* Name of the Food Category */}
-                <div
-                  key={data.id}
-                  className="fs-3 m-3"
-                  style={{ color: "#161A1F" }}
-                >
+                <div className="fs-3 m-3" style={{ color: "#161A1F" }}>
                   {data.CategoryName}
                 </div>
-
                 <hr
                   id="hr-success"
                   style={{
@@ -181,7 +155,6 @@ export default function Home() {
                       "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))",
                   }}
                 ></hr>
-
                 {food_items &&
                 Array.isArray(food_items) &&
                 food_items.length > 0 ? (
@@ -189,7 +162,7 @@ export default function Home() {
                     .filter(
                       (item) =>
                         item.CategoryName === data.CategoryName &&
-                        item.name.toLowerCase().includes(search.toLowerCase()) // when we write any thing in search bar then it filter the data according to that ( it matches with food_item.name  )
+                        item.name.toLowerCase().includes(search.toLowerCase())
                     )
                     .map((filteredItem) => {
                       return (
@@ -210,7 +183,7 @@ export default function Home() {
                   <div className="text-center mt-5 text-black">
                     <p>Loading...</p>
                     <p>
-                      Please wait while we fetch the data, It take Some Time .
+                      Please wait while we fetch the data, It takes Some Time.
                     </p>
                   </div>
                 )}
@@ -220,7 +193,7 @@ export default function Home() {
         ) : (
           <div className="text-center mt-5 text-black">
             <p>Loading...</p>
-            <p>Please wait while we fetch the data, It take Some Time .</p>
+            <p>Please wait while we fetch the data, It takes Some Time.</p>
           </div>
         )}
       </div>
