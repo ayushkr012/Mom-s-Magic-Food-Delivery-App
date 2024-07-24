@@ -78,7 +78,7 @@ export default function MyOrder() {
                         <MDBCardHeader className="px-4 py-5">
                           <MDBTypography tag="h5" className="text-muted mb-0">
                             Thanks for your Order,{" "}
-                            <span style={{ color: "#a8729a" }}>Anna</span>!
+                            <span style={{ color: "#a8729a" }}>AYUSH KUMAR</span>!
                           </MDBTypography>
                         </MDBCardHeader>
                         <MDBCardBody className="p-4">
@@ -89,13 +89,13 @@ export default function MyOrder() {
                             >
                               <MDBCardBody>
                                 <MDBRow>
-                                  <MDBCol md="2">
+                                  {/* <MDBCol md="2">
                                     <MDBCardImage
                                       src={arrayData.img}
                                       fluid
                                       alt="Phone"
                                     />
-                                  </MDBCol>
+                                  </MDBCol> */}
                                   <MDBCol
                                     md="2"
                                     className="text-center d-flex justify-content-center align-items-center"
@@ -116,9 +116,9 @@ export default function MyOrder() {
                                     md="2"
                                     className="text-center d-flex justify-content-center align-items-center"
                                   >
-                                    <p className="text-muted mb-0 small">
+                                    {/* <p className="text-muted mb-0 small">
                                       Capacity: 64GB
-                                    </p>
+                                    </p> */}
                                   </MDBCol>
                                   <MDBCol
                                     md="2"

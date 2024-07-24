@@ -132,6 +132,11 @@ export default function Cards() {
   const handleCheckOut = async () => {
     const userEmail = localStorage.getItem("userEmail");
 
+    if (!localStorage.getItem("authToken")) {
+      navigate("/login");
+      return;
+    }
+
     try {
       const response = await fetch(`${Backendurl}/api/auth/orderData`, {
         method: "POST",

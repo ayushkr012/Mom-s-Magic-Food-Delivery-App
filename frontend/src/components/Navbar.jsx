@@ -77,6 +77,23 @@ export default function Navbar(props) {
               </ul>
               {!localStorage.getItem("authToken") ? ( // here we check if the user is logged in or not if not then we display the login and signup button
                 <form className="d-flex">
+                  {/*  we allow the user to added item to the cart without login */}
+                  <div className="btn mx-2 text-white position-relative">
+                    {items.length > 0 && (
+                      <span className="badge bg-success rounded-circle position-absolute top-0 start-100 translate-middle">
+                        {items.length}
+                      </span>
+                    )}
+                    <Link to="/cart">
+                      {" "}
+                      {/*  Bootstrap's Bag icon for Cart */}
+                      <Bag
+                        width="24"
+                        height="24"
+                        style={{ color: "white" }}
+                      ></Bag>{" "}
+                    </Link>
+                  </div>
                   <Link className="btn mx-1 fs-5 text-white" to="/login">
                     Login
                   </Link>
@@ -88,7 +105,7 @@ export default function Navbar(props) {
                   </Link>
                 </form>
               ) : (
-                // when user is logged in then we display the cart and logout button
+                // when user is logged in then we display the cart and logout button also
                 <div>
                   <div className="btn mx-2 text-white position-relative">
                     {items.length > 0 && (

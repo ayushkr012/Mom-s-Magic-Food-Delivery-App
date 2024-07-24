@@ -31,9 +31,9 @@ export default function Card(props) {
 
   const handleAddToCart = async () => {
     // when user is not login and want to add to cart some dishes it navigate to login page and after login it will come back to same page
-    if (!localStorage.getItem("authToken")) {
-      navigate("/login");
-    }
+    // if (!localStorage.getItem("authToken")) {
+    //   navigate("/login");
+    // }
     toast.success("Item added to cart");
 
     let food = [];
